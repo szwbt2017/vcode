@@ -11,8 +11,8 @@ path = '/vcode'
 method = 'POST'
 
 
-#your appcode=4bXXXXXXXXXXXXXXXXXXXXX83
-appcode = 'APPCODE 4bXXXXXXXXXXXXXXXXXXXXX83'
+#your appcode= 自己的appcode
+appcode = 'APPCODE 自己的appcode'
 
 querys = ''
 bodys = {}
