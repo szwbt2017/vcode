@@ -1,12 +1,17 @@
-/*
-maven jsoup依赖
-      <dependency>
-              <groupId>org.jsoup</groupId>
-              <artifactId>jsoup</artifactId>
-              <version>1.9.2</version>
-              <scope>test</scope>
-      </dependency>
-*/
+import com.sun.org.apache.xerces.internal.impl.dv.util.Base64;
+
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.security.SecureRandom;
+import java.security.cert.CertificateException;
+import java.security.cert.X509Certificate;
+import org.jsoup.Connection;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+
+import javax.net.ssl.*;
 
 
 public class Demo {
@@ -43,9 +48,10 @@ public class Demo {
     public static void main(String[] args) throws Exception {
 
         //your appcode=自己的appcode
-        //appcode = 'APPCODE 自己的appcode'
 
-        String imgInBase64Fromat=fmImage("./2079569834.jpg");
+        String appcode = "APPCODE 自己的appcode";
+
+        String imgInBase64Fromat=fmImage("/Users/lifeng/Documents/vcode1.png");
 
         String url="https://vcode.weibits.com/vcode";
 
@@ -100,7 +106,7 @@ public class Demo {
 
         conn.data("convert_to_jpg","0");
         conn.data("img_base64",imgInBase64Fromat);
-        conn.data("typeId","34");
+        conn.data("typeId","35");
 
         long t1=System.currentTimeMillis();
         try {
@@ -109,7 +115,7 @@ public class Demo {
             System.out.println(String.format("Status====%s",status));
 
             String json=doc.body().text();
-            System.out.println(json);
+            System.out.println("json"+json);
 
 
 
