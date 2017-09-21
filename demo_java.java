@@ -104,7 +104,7 @@ public class Demo {
                 .header("User-Agent", "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:48.0) Gecko/20100101 Firefox/48.0")
                 .header("Authorization", appcode);
 
-        conn.data("convert_to_jpg","0");
+        conn.data("convert_to_jpg","1");
         conn.data("img_base64",imgInBase64Fromat);
         conn.data("typeId","35");
 
